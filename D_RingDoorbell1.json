@@ -1,0 +1,151 @@
+{
+  "default_icon": "doorbell_static.png",
+  "state_icons": [
+    {
+      "img": "doorbell_active.png",
+      "conditions": [
+        {
+          "service": "urn:micasaverde-com:serviceId:Doorbell1",
+          "variable": "Pressed",
+          "operator": "==",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "img": "doorbell_static.png",
+      "conditions": [
+        {
+          "service": "urn:micasaverde-com:serviceId:Doorbell1",
+          "variable": "Pressed",
+          "operator": "==",
+          "value": 0
+        }
+      ]
+    }
+  ],
+  "x": "2",
+  "y": "4",
+  "iconText": "1",
+  "inScene": "1",
+  "ToggleButton": 1,
+  "Tabs": [
+    {
+      "Label": {
+        "lang_tag": "ui7_tabname_control",
+        "text": "Control"
+      },
+      "Position": "0",
+      "TabType": "flash",
+      "ControlGroup": [
+        {
+          "id": "1",
+          "scenegroup": "1"
+        }
+      ],
+      "SceneGroup": [
+        {
+          "id": "1",
+          "top": "0",
+          "left": "0",
+          "x": "1",
+          "y": "1"
+        }
+      ],
+      "Control": [
+        {
+          "ControlGroup": 1,
+          "ControlType": "variable",
+          "top": 1,
+          "left": 0,
+          "Display": {
+            "Top": 8,
+            "Left": 8,
+            "Width": 240,
+            "Height": 25,
+            "Service": "urn:micasaverde-com:serviceId:Doorbell1",
+            "Variable": "LastPress"
+          },
+          "ControlCode": "lastpress"
+        }
+      ]
+    },
+    {
+      "Label": {
+        "lang_tag": "ui7_settings",
+        "text": "Settings"
+      },
+      "Position": "1",
+      "TabType": "javascript",
+      "ScriptName": "shared.js",
+      "Function": "simple_device"
+    },
+    {
+      "Label": {
+        "lang_tag": "ui7_advanced",
+        "text": "Advanced"
+      },
+      "Position": "2",
+      "TabType": "javascript",
+      "ScriptName": "shared.js",
+      "Function": "advanced_device"
+    },
+    {
+      "Label": {
+        "lang_tag": "ui7_device_options",
+        "text": "Device Options"
+      },
+      "Position": "3",
+      "TabType": "javascript",
+      "ScriptName": "shared.js",
+      "Function": "device_zwave_options"
+    },
+    {
+      "Label": {
+        "lang_tag": "ui7_logs",
+        "text": "Logs"
+      },
+      "Position": "4",
+      "TabType": "javascript",
+      "ScriptName": "shared.js",
+      "Function": "device_logs"
+    },
+    {
+      "Label": {
+        "lang_tag": "ui7_notifications",
+        "text": "Notifications"
+      },
+      "Position": "5",
+      "TabType": "javascript",
+      "ScriptName": "shared.js",
+      "Function": "device_notifications"
+    },
+    {
+      "Label": {
+        "lang_tag": "ui7_device_scenes",
+        "text": "Scenes"
+      },
+      "Position": "6",
+      "TabType": "javascript",
+      "ScriptName": "shared.js",
+      "Function": "device_scenes"
+    }
+  ],
+  "eventList2": [
+    {
+      "id": 1,
+      "label": {
+        "lang_tag": "ui7_a_doorbell_is_pressed",
+        "text": "Whenever _DEVICE_NAME_ is Pressed"
+      },
+      "serviceId": "urn:micasaverde-com:serviceId:Doorbell1",
+      "serviceStateTable": {
+        "Pressed": {
+          "value": "1",
+          "comparisson": "="
+        }
+      }
+    }
+  ],
+  "device_type": "urn:schemas-micasaverde-com:device:Doorbell:1"
+}

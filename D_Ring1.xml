@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!-- D_Ring1.xml -->
+<root xmlns="urn:schemas-upnp-org:device-1-0">
+	<specVersion>
+		<major>1</major>
+		<minor>0</minor>
+	</specVersion>
+	<device>
+		<deviceType>urn:schemas-steets250-com:device:Ring:1</deviceType>
+		<staticJson>D_Ring1.json</staticJson>
+		<friendlyName>Ring</friendlyName>
+		<manufacturer></manufacturer>
+		<manufacturerURL></manufacturerURL>
+		<modelDescription></modelDescription>
+		<modelName></modelName>
+		<handleChildren>1</handleChildren>
+		<Category_Num>1</Category_Num>
+		<Subcategory_Num>0</Subcategory_Num>
+		<serviceList>
+			<service>
+				<serviceType>urn:schemas-steets250-com:service:Ring:1</serviceType>
+				<serviceId>urn:steets250-com:serviceId:Ring1</serviceId>
+				<SCPDURL>S_Ring1.xml</SCPDURL>
+			</service>
+		</serviceList>
+		<implementationList>
+			<implementationFile>I_Ring1.xml</implementationFile>
+		</implementationList>
+	</device>
+</root>
